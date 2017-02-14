@@ -1,0 +1,12 @@
+## Title: |r[|cff0070deXBurner|r] Protected
+## Title-zhTW: |r|cff0070deXBurner|r受保护模块
+## Title-zhCN: |r|cff0070deXBurner|r受保护模块
+## Notes: A plugin for XBurner.
+## Notes-zhTW: XBurner的插件，解锁XBurner全部功能。
+## Notes-zhCN: XBurner的插件，解锁XBurner全部功能。
+## Dependencies: XBurner
+## Interface: 70100
+## X-Min-Interface: 70100
+## Author: Ellis
+
+files.xml
