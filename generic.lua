@@ -27,8 +27,8 @@ local UnitCombatReach           = UnitCombatReach
 -- Generic
 glb.Generic = {}
 
-function glb.Generic.Cast(spell, target)
-    CastSpellByName(spell, target)
+function glb.Generic.Cast(...)
+    CastSpellByName(...)
 end
 
 function glb.Generic.CastGround(spell)
@@ -154,7 +154,7 @@ function glb.FireHack.UnitCombatRange(unitA, unitB)
     return glb.FireHack.Distance(unitA, unitB) - (UnitCombatReach(unitA) + UnitCombatReach(unitB))
 end
 
-local losFlags = bit.bor(0x10, 0x100)
+local losFlags = 0x10 -- bit.bor(0x10, 0x100)
 function glb.FireHack.LineOfSight(Unit1, Unit2)
     if Unit2 == nil then
         if Unit1 == "player" then
@@ -186,7 +186,7 @@ function glb.FireHack.LineOfSight(Unit1, Unit2)
     if UnitExists(Unit1) and UnitIsVisible(Unit1) and UnitExists(Unit2) and UnitIsVisible(Unit2) then
         local X1,Y1,Z1 = ObjectPosition(Unit1)
         local X2,Y2,Z2 = ObjectPosition(Unit2)
-        if TraceLine(X1,Y1,Z1 + 2.25,X2,Y2,Z2 + 2.25, losFlags) == nil then
+        if TraceLine(X1,Y1,Z1 + 2,X2,Y2,Z2 + 2, losFlags) == nil then
             return true
         else
             return false
